@@ -52,12 +52,12 @@ if (isset($_POST["submit"])) {
             <div class="row mb-3">
                <div class="col">
                   <label class="form-label">First Name:</label>
-                  <input type="text" class="form-control" name="first_name" placeholder="Albert">
+                  <input type="text" class="form-control" name="first_name" placeholder="First Name">
                </div>
 
                <div class="col">
                   <label class="form-label">Last Name:</label>
-                  <input type="text" class="form-control" name="last_name" placeholder="Einstein">
+                  <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                </div>
             </div>
 
