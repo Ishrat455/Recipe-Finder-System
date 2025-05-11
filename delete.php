@@ -1,7 +1,7 @@
 <?php
 include "db_conn.php";
 $id = $_GET["id"];
-$sql = "DELETE FROM `user entry` WHERE id = $id";
+$sql = "DELETE FROM `users` WHERE id = $id";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
