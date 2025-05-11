@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
   $email = $_POST['email'];
   $gender = $_POST['gender'];
 
-  $sql = "UPDATE `user entry` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
+  $sql = "UPDATE `users` SET `first_name`='$first_name',`last_name`='$last_name',`email`='$email',`gender`='$gender' WHERE id = $id";
 
   $result = mysqli_query($conn, $sql);
 
@@ -38,9 +38,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #00ff5573;">
-    Recipe finder system
-  </nav>
+  <?php include "navbar.php"; ?>
 
   <div class="container">
     <div class="text-center mb-4">
@@ -49,7 +47,7 @@ if (isset($_POST["submit"])) {
     </div>
 
     <?php
-    $sql = "SELECT * FROM `user entry` WHERE id = $id LIMIT 1";
+    $sql = "SELECT * FROM `users` WHERE id = $id LIMIT 1";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
     ?>
