@@ -20,9 +20,7 @@ include "db_conn.php";
 </head>
 
 <body>
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #00ff5573;">
-    Recipe finder system
-  </nav>
+  <?php include "navbar.php"; ?>
 
   <div class="container">
     <?php
@@ -49,7 +47,7 @@ include "db_conn.php";
       </thead>
       <tbody>
         <?php
-        $sql = "SELECT * FROM `user entry`";
+        $sql = "SELECT * FROM `users`";
         $result = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
