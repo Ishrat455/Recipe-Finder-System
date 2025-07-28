@@ -2,11 +2,13 @@
 
 http://localhost/rfs/
 
-Recipe Finder System
-Overview
+
+
+Overview:-
 The Recipe Finder System is a user-friendly web application designed to help users discover recipes based on ingredients they have at home. The system aims to reduce food waste and simplify cooking by allowing users to search for recipes, save favorites, manage their profiles, and contribute their own recipes. It includes an admin panel for managing users, recipes, and password reset requests. This project was developed as part of the Project II course (ICT-3204) at SMUCT for Winter-2025.
 Features
-The implemented features include:
+
+The implemented features include:-
 
 User Authentication:
 Sign Up: Users can create accounts with first name, last name, email, password, and gender (add-new.php).
@@ -41,7 +43,7 @@ Recipes are matched based on ingredients stored in a relational structure (recip
 
 
 
-Technologies Used
+Technologies Used:-
 The implemented tech stack differs from the proposed stack (React.js, Node.js, MongoDB) due to the use of PHP and MySQL for simplicity and compatibility with XAMPP.
 
 Frontend:
@@ -72,7 +74,7 @@ Git & GitHub: For version control and collaboration (assumed based on proposal).
 
 
 
-Database Schema
+Database Schema:-
 The rfs database consists of the following tables:
 
 users (id, first_name, last_name, email, password, gender, is_admin): Stores user information with hashed passwords.
@@ -82,23 +84,6 @@ recipe_ingredients (recipe_id, ingredient_id, quantity, amount, unit): Links rec
 saved_recipes (user_id, recipe_id, is_favorite): Stores user-saved recipes with a favorite flag.
 search_history (id, user_id, ingredients, search_time): Logs user searches.
 password_resets (id, email, status, new_password, request_time): Manages password reset requests.
-
-Sample Data
-
-Users: 6 users (e.g., Ishrat Jahan, Neko Mimi).
-Recipes: 10 recipes (e.g., Chicken Curry, Margherita Pizza).
-Ingredients: 20 ingredients (e.g., Chicken, Tomato, Basil).
-Search History: 8 search entries (e.g., "chicken", "Basil Pesto Pasta").
-Saved Recipes: Currently empty but supports user saves.
-Password Resets: Empty but supports reset requests.
-
-Setup Instructions
-To run the Recipe Finder System locally using XAMPP:
-
-Install XAMPP:
-
-Download and install XAMPP (compatible with PHP 8.2.12 and MariaDB 10.4.32).
-Start Apache and MySQL modules.
 
 
 Set Up the Database:
@@ -126,7 +111,7 @@ Sign up, log in, search recipes, save/remove recipes, and access the admin panel
 
 
 
-Work Done
+Work Done:-
 The following work was completed for the Recipe Finder System:
 
 Core Functionality:
@@ -165,7 +150,7 @@ Ensured consistent formatting across pages (e.g., tables, forms, alerts).
 
 
 
-Future Improvements
+Future Improvements:-
 
 Security Enhancements:
 Address SQL injection vulnerabilities in files like recipe-details.php, save-recipe.php, and update-password.php by using prepared statements.
@@ -193,12 +178,11 @@ Deploy the application to a hosting service (e.g., Heroku, DigitalOcean) with a 
 
 
 
-Contributors
+Contributors:-
 
 Ishrat Jahan Fabiha (ID: 223071125)
-Tanha Azad Safa (ID: 22307030)
 
-Course Information
+Course Information:-
 
 Course Title: Project II
 Course Code: ICT-3204
