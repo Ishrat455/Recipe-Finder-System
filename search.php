@@ -30,6 +30,11 @@ if (isset($_POST['search'])) {
     $result = mysqli_stmt_get_result($stmt);
     $search_results = mysqli_fetch_all($result, MYSQLI_ASSOC);
     mysqli_stmt_close($stmt);
+} else {
+    // If no search is performed, get all recipes
+    $sql = "SELECT * FROM recipes";
+    $result = mysqli_query($conn, $sql);
+    $all_recipes = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 ?>
 
@@ -64,6 +69,36 @@ if (isset($_POST['search'])) {
                 </div>
             </form>
         </div>
+        <?php if (isset($all_recipes) && !empty($all_recipes)) { ?>
+            <h4 class="mt-4">All Recipes</h4>
+            <table class="table table-hover text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Cuisine</th>
+                        <th>Prep Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($all_recipes as $recipe) { ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($recipe['title']); ?></td>
+                            <td><?php echo htmlspecialchars($recipe['cuisine']); ?></td>
+                            <td><?php echo htmlspecialchars($recipe['prep_time']); ?> min</td>
+                            <td>
+                                <a href="recipe-details.php?id=<?php echo $recipe['id']; ?>" class="link-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="View Recipe"><i class="fa-solid fa-eye fs-5"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        <?php } elseif (isset($_POST['search']) && empty($search_results)) { ?>
+            <div class="alert alert-warning mt-4" role="alert">
+                No recipes found for the given ingredients.
+            </div>
+        <?php } ?>
+
         <?php if (!empty($search_results)) { ?>
             <h4 class="mt-4">Search Results</h4>
             <table class="table table-hover text-center">
